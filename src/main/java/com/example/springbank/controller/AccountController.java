@@ -20,6 +20,7 @@ public class AccountController {
         System.out.println(acc);
         try {
             accountService.makeAccount(acc);
+            res = new ResponseEntity<String>("sucess",HttpStatus.OK);
         } catch (Exception e){
             e.printStackTrace();;
             res= new ResponseEntity<String>("error", HttpStatus.BAD_GATEWAY);
