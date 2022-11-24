@@ -23,5 +23,15 @@ public class Account {
     private  String grade;
     @Column
     private Integer balance;
-
+    public void deposit(Integer money){
+        this.balance +=money;
+    }
+    public  void withdraw(Integer money)throws Exception{
+        if(this.balance < money) throw new Exception("잔액 부족");
+        this.balance -= money;
+    }
+    public  void transfor(Integer money)throws Exception{
+        if(this.balance < money) throw new Exception("잔액 부족");
+        this.balance -= money;
+    }
 }
